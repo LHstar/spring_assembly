@@ -48,18 +48,18 @@ class Spring360 {
   constructor(options = {}) {
     // 默认参数
     this.options = Object.assign({
-      width: 100,
-      height: 180,
+      width: 200,
+      height: 280,
       spring_length: 50,//弹簧长度
-      baseWidth: 80,//底座长
-      baseHeight: 18,//底座高
+      baseWidth: 90,//底座长
+      baseHeight: 20,//底座高
       container: document.body,
       label: '物体',
       img: null // 新增图片参数，默认为 null
     }, options);
     this.options.spring_length = Math.min(this.options.spring_length, this.options.height / 2 - 30);
     this.turns = this.options.turns??7; // 弹簧圈数
-    this.springWidth = this.options.spring_width??this.options.width*0.06;//弹簧宽度
+    this.springWidth = this.options.spring_width??5;//弹簧宽度
     this.springHeight = Math.abs(this.options.height - this.options.spring_length);//弹簧高度
     this.rest = { x: (this.options.width) / 2, y: this.springHeight }; // 球静止点（ball中下点）
     this.base = { x: this.options.width / 2, y: this.options.height - this.options.baseHeight }; // 基座中上点
@@ -108,8 +108,8 @@ class Spring360 {
     this.wrapper.style.overflow = 'visible';
     if (!this.options.position || this.options.position === 'fixed-br') {// 固定在右下
       this.wrapper.style.position = 'fixed';
-      this.wrapper.style.right = '7%';
-      this.wrapper.style.bottom = '3%';
+      this.wrapper.style.right = '17%';
+      this.wrapper.style.bottom = '13%';
     } else {// 保持原有居中
       this.wrapper.style.position = 'relative';
       this.wrapper.style.margin = '0 auto';
